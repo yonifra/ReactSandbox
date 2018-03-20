@@ -1,10 +1,11 @@
 {
   "name": "react-sandbox",
   "description": "This is my first React sandbox project for learning the framework.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {
-    "react-dom": "16.0.0",
-    "react": "16.0.0"
+    "jshint": "^2.9.5",
+    "react": "16.0.0",
+    "react-dom": "16.0.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.0"

@@ -1,9 +1,10 @@
-import React from "react";
-import { render } from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { InlineBlock, Button, Popover, withPopoverState } from 'reas';
 import Hello from "./Hello";
 import Task from "./Task";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // Create a Title component that'll render an <h1> tag with some styles
 const Title = styled.h1`
@@ -14,12 +15,12 @@ const Title = styled.h1`
 `;
 
 const ButtonStyled = styled.button`
-border-radius: 3px;
-padding: 0.25em 1em;
-margin: 0 1em;
-background: transparent;
-color: palevioletred;
-border: 2px solid palevioletred;
+  border-radius: 3px;
+  padding: 0.25em 1em;
+  margin: 0 1em;
+  background: transparent;
+  color: palevioletred;
+  border: 2px solid palevioletred;
 ` ;
 
 
@@ -53,7 +54,7 @@ const NavBarStyled = styled(Navbar)`
 const App = withPopoverState(({ popover }) => (
   <div>
   <NavBarStyled>
-    <NavButtonStyled children="Menu" />
+    <NavButtonStyled children="File" />
     <NavButtonStyled children="Profile" />
     <NavButtonStyled children="About" />
   </NavBarStyled>
@@ -75,4 +76,15 @@ const App = withPopoverState(({ popover }) => (
 </div>
 ));
 
-render(<App />, document.getElementById("root"));
+const rootElement = document.getElementById("root")
+
+function tick( ){
+  const time = new Date().toLocaleTimeString();
+  console.log("time is now " + time);
+  const element = <div>It is {time}</div>
+  ReactDOM.render(element, rootElement);
+}
+
+setInterval(tick, 1000)
+
+//render(<App />, document.getElementById("root"));
